@@ -2,10 +2,11 @@ package functions
 
 import (
 	"fmt"
-	"github.com/DeadBread-001/GoDz/tree/dz1part2/stack"
 	"strconv"
 	"strings"
 	"unicode"
+
+	"github.com/DeadBread-001/GoDz/tree/dz1part2/stack"
 )
 
 const operators = "+-*/()"
