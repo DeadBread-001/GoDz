@@ -3,6 +3,7 @@ package main
 import (
 	"errors"
 	"fmt"
+	"log"
 	"os"
 	"strings"
 
@@ -15,14 +16,14 @@ const expectedArgs = 2
 
 func main() {
 	if len(os.Args) != expectedArgs {
-		fmt.Println(errParse)
+		log.Fatalf("Error: %v", errParse)
 	}
 
 	expression := strings.Join(os.Args[1:], "")
 	result, err := functions.Calculate(expression)
 
 	if err != nil {
-		fmt.Printf("error calculating result: %v\n", err)
+		log.Fatalf("error calculating result: %v\n", err)
 	}
 	fmt.Println(result)
 }
