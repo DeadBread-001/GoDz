@@ -1,10 +1,11 @@
-package functions_test
+package uniq_test
 
 import (
 	"errors"
-	"github.com/DeadBread-001/GoDz/tree/dz1part1/functions"
 	"reflect"
 	"testing"
+
+	"github.com/DeadBread-001/GoDz/tree/dz1part1/uniq"
 )
 
 var errNum = errors.New("invalid input number")
@@ -19,7 +20,7 @@ func TestIgnoreCase(t *testing.T) {
 	}
 
 	for _, test := range tests {
-		result := functions.IgnoreCase(test.input)
+		result := uniq.IgnoreCase(test.input)
 		if !reflect.DeepEqual(result, test.expected) {
 			t.Errorf("IgnoreCase(%v) = %v, expected %v", test.input, result, test.expected)
 		}
@@ -39,7 +40,7 @@ func TestIgnoreFields(t *testing.T) {
 	}
 
 	for _, test := range tests {
-		result, err := functions.IgnoreFields(test.input, test.num)
+		result, err := uniq.IgnoreFields(test.input, test.num)
 
 		if !reflect.DeepEqual(result, test.expected) {
 			t.Errorf("IgnoreFields(%v, %d) = %v, expected %v", test.input, test.num, result, test.expected)
@@ -64,7 +65,7 @@ func TestIgnoreCharacters(t *testing.T) {
 	}
 
 	for _, test := range tests {
-		result, err := functions.IgnoreCharacters(test.input, test.num)
+		result, err := uniq.IgnoreCharacters(test.input, test.num)
 
 		if !reflect.DeepEqual(result, test.expected) {
 			t.Errorf("IgnoreCharacters(%v, %d) = %v, expected %v", test.input, test.num, result, test.expected)

@@ -1,10 +1,11 @@
-package functions_test
+package uniq_test
 
 import (
 	"errors"
-	"github.com/DeadBread-001/GoDz/tree/dz1part1/functions"
 	"reflect"
 	"testing"
+
+	"github.com/DeadBread-001/GoDz/tree/dz1part1/uniq"
 )
 
 var errProcess = errors.New("selection funcs error")
@@ -22,7 +23,7 @@ func TestBuildResult(t *testing.T) {
 	}
 
 	for _, test := range tests {
-		result, err := functions.BuildResult(test.suitableLines, test.lines)
+		result, err := uniq.BuildResult(test.suitableLines, test.lines)
 
 		if !reflect.DeepEqual(result, test.expected) {
 			t.Errorf("BuildResult(%v, %v) = %v, expected %v", test.suitableLines, test.lines, result, test.expected)
@@ -45,7 +46,7 @@ func TestStandartUniq(t *testing.T) {
 	}
 
 	for _, test := range tests {
-		result := functions.StandartUniq(test.lines)
+		result := uniq.StandartUniq(test.lines)
 
 		if !reflect.DeepEqual(result, test.expected) {
 			t.Errorf("StandartUniq(%v) = %v, expected %v", test.lines, result, test.expected)
@@ -64,7 +65,7 @@ func TestDuplicatedLines(t *testing.T) {
 	}
 
 	for _, test := range tests {
-		result := functions.DuplicatedLines(test.lines)
+		result := uniq.DuplicatedLines(test.lines)
 
 		if !reflect.DeepEqual(result, test.expected) {
 			t.Errorf("DuplicatedLines(%v) = %v, expected %v", test.lines, result, test.expected)
@@ -83,7 +84,7 @@ func TestUniqLines(t *testing.T) {
 	}
 
 	for _, test := range tests {
-		result := functions.UniqLines(test.lines)
+		result := uniq.UniqLines(test.lines)
 
 		if !reflect.DeepEqual(result, test.expected) {
 			t.Errorf("UniqLines(%v) = %v, expected %v", test.lines, result, test.expected)
@@ -103,7 +104,7 @@ func TestCountOfLines(t *testing.T) {
 	}
 
 	for _, test := range tests {
-		result := functions.CountOfLines(test.lines, test.originalLines)
+		result := uniq.CountOfLines(test.lines, test.originalLines)
 
 		if !reflect.DeepEqual(result, test.expected) {
 			t.Errorf("CountOfLines(%v, %v) = %v, expected %v", test.lines, test.originalLines, result, test.expected)
