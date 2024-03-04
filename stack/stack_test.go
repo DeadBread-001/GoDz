@@ -3,8 +3,9 @@ package stack_test
 import (
 	"testing"
 
-	"github.com/DeadBread-001/GoDz/tree/dz1part2/stack"
 	"github.com/stretchr/testify/assert"
+
+	"github.com/DeadBread-001/GoDz/tree/dz1part2/stack"
 )
 
 func TestStack(t *testing.T) {

@@ -3,9 +3,10 @@ package main
 import (
 	"errors"
 	"fmt"
-	"github.com/DeadBread-001/GoDz/tree/dz1part2/functions"
 	"os"
 	"strings"
+
+	"github.com/DeadBread-001/GoDz/tree/dz1part2/functions"
 )
 
 var errParse = errors.New("error in parsing command line")
