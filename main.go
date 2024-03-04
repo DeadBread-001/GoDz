@@ -2,7 +2,7 @@ package main
 
 import (
 	"flag"
-	"fmt"
+	"log"
 
 	"github.com/DeadBread-001/GoDz/tree/dz1part1/inputoutput"
 	"github.com/DeadBread-001/GoDz/tree/dz1part1/uniq"
@@ -19,16 +19,16 @@ func main() {
 
 	lines, err := inputoutput.InputToSlice(inputFile)
 	if err != nil {
-		fmt.Printf("Error occured: %v", err)
+		log.Fatalf("Error occured: %v", err)
 	}
 
 	lines, err = uniq.ExecuteUniq(flags, lines)
 	if err != nil {
-		fmt.Printf("Error occured: %v", err)
+		log.Fatalf("Error occured: %v", err)
 	}
 
 	err = inputoutput.SliceToOutput(lines, outputFile)
 	if err != nil {
-		fmt.Printf("Error occured: %v", err)
+		log.Fatalf("Error occured: %v", err)
 	}
 }
