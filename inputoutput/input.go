@@ -23,6 +23,7 @@ func InputToSlice(inputFile string) ([]string, error) {
 
 		if err := scanner.Err(); err != nil {
 			fmt.Printf("Invalid input: %s\n", err)
+			return nil, err
 		}
 
 		return lines, nil
@@ -35,6 +36,7 @@ func InputToSlice(inputFile string) ([]string, error) {
 
 	if err := scanner.Err(); err != nil {
 		fmt.Printf("Invalid input: %s\n", err)
+		return nil, err
 	}
 
 	return lines, nil
