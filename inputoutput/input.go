@@ -18,6 +18,10 @@ func InputToSlice(inputFile string) ([]string, error) {
 
 		scanner := bufio.NewScanner(file)
 		for scanner.Scan() {
+			if err := scanner.Err(); err != nil {
+				fmt.Println("Ошибка при сканировании:", err)
+				break
+			}
 			lines = append(lines, scanner.Text())
 		}
 
@@ -26,6 +30,10 @@ func InputToSlice(inputFile string) ([]string, error) {
 
 	scanner := bufio.NewScanner(os.Stdin)
 	for scanner.Scan() {
+		if err := scanner.Err(); err != nil {
+			fmt.Println("Ошибка при сканировании:", err)
+			break
+		}
 		lines = append(lines, scanner.Text())
 	}
 
